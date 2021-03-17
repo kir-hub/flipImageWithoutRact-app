@@ -7,14 +7,8 @@ export default function Pane() {
     const defaultValue ={
         url: 'https://ath2.unileverservices.com/wp-content/uploads/sites/4/2020/02/IG-annvmariv-1024x1016.jpg'
     }
-    const [newUrl, setNewUrl] = useState('')
-    const newUrlCallback = useCallback((e) => setNewUrl(e.target.value) )
-
-    const displayPic = (value)=> {
-        console.log(value);
-        setNewUrl(value)}
-    
-   
+    const [newUrl, setNewUrl] = useState(defaultValue.url)
+    const displayPic = (value)=> setNewUrl(value)    
     return (
         <>
         <div className='upper'> 
@@ -26,9 +20,6 @@ export default function Pane() {
             <span><Sector newUrl={newUrl}/> </span>
         </div>
         <Input funcOnclick={displayPic}/>
-        
-        {/* <input onChange={newUrlCallback} value={newUrl}/>
-        <button onClick={displayPic}>Display</button> */}
         </>
     )
 }
