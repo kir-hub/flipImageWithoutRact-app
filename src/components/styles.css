@@ -1,0 +1,33 @@
+.matrix{
+    margin: 40px;
+
+}
+.upper{
+    display: flex;
+}
+
+
+
+.up{
+    height: 150px;
+    /* animation-duration: 0.5s;
+    animation-name: flip; */
+    transition: transform 0.5s;
+    transform: rotate(0deg);
+    
+}
+.down{
+    height: 150px;
+    transition: transform 0.5s;
+    transform: rotate(180deg);
+}
+.left{
+    height: 150px;
+    transition: transform 0.5s;
+    transform: rotate(-90deg);
+}
+.right{
+    height: 150px;
+    transition: transform 0.5s;
+    transform: rotate(90deg);
+}
