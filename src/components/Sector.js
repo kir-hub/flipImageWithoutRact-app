@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import "./styles.css"
 
 export default function Sector(props) {
@@ -19,6 +19,8 @@ export default function Sector(props) {
         setPosition('right')
     }
 
+    const findImage = useCallback((e)=>setUrl(e.target.value))
+
    useEffect(()=> {
        setUrl(props.newUrl)
    },[props.newUrl]) 
@@ -36,7 +38,7 @@ export default function Sector(props) {
             <button onClick={downBtn}> \/</button>
             <button onClick={leftBtn}> -= </button>
             <button onClick={rightBtn}> =- </button>
-            <input onChange={e => setUrl(e.target.value)} value={url}/>
+            <input onChange={findImage} value={url}/>
             </>  
         )
     } else if (!response) {
